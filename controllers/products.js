@@ -8,7 +8,7 @@ exports.getProductsByCategory = async (req, res) => {
         {
           model: models.product,
           as: "product",
-          where: { category_id: req.query.categoryId },
+          where: { category_id: req.params.categoryId },
           include: [{ model: models.category, as: "category" }],
         },
         {
